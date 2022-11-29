@@ -1,0 +1,13 @@
+
+.menu-link .text_filled {
+    display: none;
+}
+
+.menu-link:hover .text_outline,
+.menu-link:active .text_outline {
+  display: none;
+}
+.menu-link:hover .text_filled,
+.menu-link:active .text_filled {
+  display: block;
+}
