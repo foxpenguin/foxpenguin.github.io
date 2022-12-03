@@ -1,13 +1,90 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
 
-.menu-link .text_filled {
+body {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+nav {
+  /* overflow: hidden; what is it? */
+  background-color: #dedede;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: grid;
+
+  justify-content: center;
+  justify-items: center;
+
+}
+
+li.fullwidth {
+  grid-column: 1/4;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+@media (min-width: 600px){ /* what is this for? it is for desktops (responsive design), changes only properties mentioned*/
+  nav {
+    padding: 20px;
+  }
+  nav ul {
+    grid-template-columns: 1fr repeat(2, fit-content(100px));
+    justify-items: end;
+  }
+  li.fullwidth {
+    grid-column: 1/2;
+    justify-self: start;
+  }
+}
+
+/* a::before {
+  content: "";
+  position: absolute;            
+  height: 3px;
+  right: 0px;
+  bottom: -3px;
+  left: 0px;
+  background-color: $linkPink;
+} */
+
+.navlink {
+  display: inline-block;
+  margin: auto;
+  padding: 1vh 1vw;
+  border: 1px solid black;
+}
+
+.text_filled, .text_outline {
+  width: 15vw;
+  min-width: 100px;
+  height: auto;
+  /* padding: 15; */
+}
+
+/* Image filling effect */
+.navlink .text_filled {
     display: none;
 }
 
-.menu-link:hover .text_outline,
-.menu-link:active .text_outline {
+.navlink:hover .text_outline,
+.navlink:active .text_outline {
   display: none;
 }
-.menu-link:hover .text_filled,
-.menu-link:active .text_filled {
-  display: block;
+.navlink:hover .text_filled,
+.navlink:active .text_filled {
+  display: inline-block;
 }
