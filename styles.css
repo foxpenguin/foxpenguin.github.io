@@ -21,15 +21,19 @@ nav {
 
 nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
+
+  gap: 20px; /* how to make it mobile friendly? */
+  /* grid-template-columns: repeat(1, 100px); */
 
   justify-content: center;
   justify-items: center;
-
 }
 
 li.fullwidth {
-  grid-column: 1/4;
+  grid-column: 1 / 2;
 }
 
 a {
@@ -39,14 +43,19 @@ a {
 
 @media (min-width: 600px){ /* what is this for? it is for desktops (responsive design), changes only properties mentioned*/
   nav {
-    padding: 20px;
+    padding: 5px;
+    /* padding-right: 40px; fix this using grid */
   }
   nav ul {
-    grid-template-columns: 1fr repeat(2, fit-content(100px));
+    grid-template-columns: 1fr repeat(2, fit-content(100px)); /* what is the size specification of fit-content for? */
     justify-items: end;
   }
-  li.fullwidth {
-    grid-column: 1/2;
+  nav ul li {
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li.fullwidth {
+    grid-column: 1 / 2;
     justify-self: start;
   }
 }
@@ -61,30 +70,32 @@ a {
   background-color: $linkPink;
 } */
 
+/* 
 .navlink {
   display: inline-block;
-  margin: auto;
-  padding: 1vh 1vw;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  border: 1px solid black;
+} */
+
+.text_filled, .text_outline {
+  width: 20vw;
+  min-width: 100px;
+  height: auto;
+  /* min-height: min-content; what to put as minimum height? */
   border: 1px solid black;
 }
 
-.text_filled, .text_outline {
-  width: 15vw;
-  min-width: 100px;
-  height: auto;
-  /* padding: 15; */
-}
-
 /* Image filling effect */
-.navlink .text_filled {
+a .text_filled {
     display: none;
 }
-
-.navlink:hover .text_outline,
-.navlink:active .text_outline {
+a:hover .text_outline,
+a:active .text_outline {
   display: none;
 }
-.navlink:hover .text_filled,
-.navlink:active .text_filled {
+a:hover .text_filled,
+a:active .text_filled {
   display: inline-block;
 }
