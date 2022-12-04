@@ -12,6 +12,7 @@ body {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
 nav ul {
   list-style: none;
   margin: 2vh 3vw;
@@ -22,10 +23,12 @@ nav ul {
   justify-content: center;
   justify-items: center;
 }
+
 nav ul li {
   margin: 0;
   padding: 0;
 }
+
 li.fullwidth {
   grid-column: 1 / 2;
 }
@@ -60,10 +63,12 @@ a {
 a .text_filled {
     display: none;
 }
+
 a:hover .text_outline,
 a:active .text_outline {
   display: none;
 }
+
 a:hover .text_filled,
 a:active .text_filled {
   display: inline-block;
