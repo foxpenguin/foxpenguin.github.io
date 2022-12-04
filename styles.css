@@ -12,26 +12,20 @@ body {
 *, *::before, *::after {
   box-sizing: inherit;
 }
-
-nav {
-  /* overflow: hidden; what is it? */
-  background-color: #dedede;
-  padding: 10px;
-}
-
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 2vh 3vw;
+  padding: 1vh 1vw;
   display: grid;
-
-  gap: 20px; /* how to make it mobile friendly? */
-  /* grid-template-columns: repeat(1, 100px); */
-
+  gap: 3vw; /* how to make it mobile friendly? */
+  align-items: center;
   justify-content: center;
   justify-items: center;
 }
-
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
 li.fullwidth {
   grid-column: 1 / 2;
 }
@@ -42,49 +36,24 @@ a {
 }
 
 @media (min-width: 600px){ /* what is this for? it is for desktops (responsive design), changes only properties mentioned*/
-  nav {
-    padding: 5px;
-    /* padding-right: 40px; fix this using grid */
-  }
   nav ul {
     grid-template-columns: 1fr repeat(2, fit-content(100px)); /* what is the size specification of fit-content for? */
     justify-items: end;
   }
-  nav ul li {
-    margin: 0;
-    padding: 0;
-  }
+
   nav ul li.fullwidth {
     grid-column: 1 / 2;
     justify-self: start;
   }
 }
 
-/* a::before {
-  content: "";
-  position: absolute;            
-  height: 3px;
-  right: 0px;
-  bottom: -3px;
-  left: 0px;
-  background-color: $linkPink;
-} */
-
-/* 
-.navlink {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  height: fit-content;
-  border: 1px solid black;
-} */
-
+/* Image sizing */
 .text_filled, .text_outline {
   width: 20vw;
   min-width: 100px;
   height: auto;
   /* min-height: min-content; what to put as minimum height? */
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 /* Image filling effect */
